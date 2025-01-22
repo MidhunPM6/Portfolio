@@ -1,3 +1,4 @@
+import MainPage from "./Pages/MainPage";
 
 
 
@@ -5,7 +6,7 @@ function App() {
   return (
     <>
     <div>
-      <h1 >hello</h1>
+      <MainPage/>
     </div>
     </>
   );

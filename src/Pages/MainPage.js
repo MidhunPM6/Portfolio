@@ -1,15 +1,18 @@
 import React from 'react'
 import MainSection from '../Components/MainSection/MainSection'
-import Skills from '../Components/MainSection/Skills/Skills'
+import Skills from '../Components/TechStack/TechStack'
+
+
 
 
 const MainPage = () => {
   return (
     <>
       <MainSection/>
-      <Skills/>
+       <Skills/>
     </>
   )
 }
 
 export default MainPage
+    

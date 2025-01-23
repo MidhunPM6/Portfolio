@@ -49,7 +49,7 @@ const Skills = () => {
   }, [])
   return (
     <>
-      <div className='flex flex-col bg-gradient-to-r from-slate-950 to-slate-800 min-h-screen text-white items-center font-archivo shadow-lg'>
+      <div className='flex flex-col bg-gradient-to-r from-slate-950 to-slate-800 min-h-screen text-white items-center font-archivo drop-shadow-xl'>
         <div className='mt-20'>
           <h1 className='text-2xl font-semibold text-gray-200'>Tech Stacks</h1>
         </div>
@@ -119,7 +119,7 @@ const Skills = () => {
   />
 </div>
 
-        <div className='max-w-[90vw] text-gray-400 border border-blue-700 p-8 rounded-lg shadow-2xl shadow-blue-900  hover:text-gray-300 hover:shadow-blue-800 mt-16 hover:scale-[101%]'>
+        <div className='max-w-[90vw] text-gray-400 border border-blue-700 p-8 rounded-lg shadow-2xl shadow-blue-900  hover:text-gray-300 hover:shadow-blue-800 mt-16 hover:scale-[101%] '>
           <p className='text-xl leading-relaxed '>
             {' '}
             My frontend skills include creating modern interfaces with React.js,

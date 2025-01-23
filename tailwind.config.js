@@ -9,6 +9,7 @@ module.exports = {
       spicy:["Spicy Rice", "serif"]
       
   },
+  
 },
   },
   plugins: [],

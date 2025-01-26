@@ -1,7 +1,9 @@
-import React ,{useEffect}from 'react'
+import React, { useEffect } from 'react'
 import gif from '../assets/gif.json'
-import {useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import './Contact.css'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import Lottie from 'lottie-react'
 
@@ -23,7 +25,7 @@ const ContactSection = () => {
       })
       .then(
         () => {
-          console.log('SUCCESS!')
+          toast('Send Successfully')
         },
         error => {
           console.log('FAILED...', error.text)
@@ -31,28 +33,28 @@ const ContactSection = () => {
       )
   }
 
-  const [isVisible, setIsVisible] = useState(false);
+  const paragraphRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    // Intersection Observer setup
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);  // Trigger animation when section is in view
-          observer.disconnect(); // Stop observing once it's in view
+          setIsInView(true); // Trigger animation when in view
+          observer.disconnect(); // Stop observing after the animation starts
         }
       },
-      { threshold: 0.5 } // When 50% of the element is in view
+      { threshold: 0.5 } // Adjust threshold as needed
     );
 
-    const section = document.getElementById("typingSection");
+    const section = paragraphRef.current;
     if (section) {
       observer.observe(section);
     }
 
     return () => {
       if (section) {
-        observer.unobserve(section);
+        observer.unobserve(section); // Clean up observer
       }
     };
   }, []);
@@ -60,15 +62,30 @@ const ContactSection = () => {
 
   return (
     <>
-      <div className='bg-gradient-to-r from-slate-950 to-slate-800 min-h-screen md:p-12 p-6'>
+      <div
+        className='bg-gradient-to-r from-slate-950 to-slate-800 min-h-screen md:p-12 p-6'
+        id='reachme'
+      >
+        <ToastContainer
+          position='top-right'
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='light'
+        />
         <div className='flex flex-col md:flex-row  items-center  rounded-md  '>
-          <div className='flex flex-col items-center w-full  md:w-[50%] h-[60vh]  rounded-md'>
-            <div className='w-[64%]'>
+          <div className='flex flex-col items-center w-full  md:w-[50%] md:h-[60vh] h-[40vh]  rounded-md md:mb-0 mb-10 '>
+            <div className='md:w-[64%] w-full  '>
               <Lottie loop={true} animationData={gif}></Lottie>
             </div>
           </div>
 
-          <div className='flex flex-col  p-10 w-full   md:w-[36%] h-[55vh] bg-black rounded-xl shadow-2xl shadow-blue-950 '>
+          <div className='flex flex-col  p-10 w-full  md:mb-0  md:w-[36%] h-[55vh] bg-black rounded-xl shadow-2xl shadow-blue-950 mb-10 '>
             <form
               action=''
               className='flex flex-col items-center'
@@ -92,7 +109,6 @@ const ContactSection = () => {
                 name='message'
                 id=''
                 placeholder='Description'
-
                 className='bg-gray-200 p-2 rounded-md text-gray-700 w-full md:w-[80%] lg:w-[50%] mt-6   outline-none focus:border  border-blue-700  shadow-2xl shadow-blue-800 max-h-28'
               ></textarea>
               <button
@@ -130,7 +146,7 @@ const ContactSection = () => {
               width='100'
               height='100'
               viewBox='0 0 64 64'
-              className='size-12 cursor-pointer  '
+              className='size-12 cursor-pointer hover:scale-125 '
               onClick={() => (window.location.href = gitLink)}
             >
               <circle cx='32' cy='32' r='23' fill='#9c34c2'></circle>
@@ -166,7 +182,7 @@ const ContactSection = () => {
               width='100'
               height='100'
               viewBox='0 0 64 64'
-              className='size-12 ml-2 cursor-pointer'
+              className='size-12 ml-2 cursor-pointer hover:scale-125'
               onClick={() => (window.location.href = linkedinLink)}
             >
               <linearGradient
@@ -240,7 +256,7 @@ const ContactSection = () => {
                 d='M50,57H14c-3.859,0-7-3.141-7-7V14c0-3.859,3.141-7,7-7h36c3.859,0,7,3.141,7,7v36 C57,53.859,53.859,57,50,57z M14,9c-2.757,0-5,2.243-5,5v36c0,2.757,2.243,5,5,5h36c2.757,0,5-2.243,5-5V14c0-2.757-2.243-5-5-5H14z'
               ></path>
             </svg>
-            
+
             <svg
               xmlns='http://www.w3.org/2000/svg'
               x='0px'
@@ -248,9 +264,10 @@ const ContactSection = () => {
               width='100'
               height='100'
               viewBox='0 0 64 64'
-              className='size-12 ml-2 cursor-pointer '
-              onClick={()=>window.location.href='mailto:midhunpm6060@gmail.com'}
-              
+              className='size-12 ml-2 cursor-pointer hover:scale-125 '
+              onClick={() =>
+                (window.location.href = 'mailto:midhunpm6060@gmail.com')
+              }
             >
               <linearGradient
                 id='AWKzNDila4ISNLgYjkvBOa_ihMzI7k32pJf_gr1'
@@ -283,20 +300,29 @@ const ContactSection = () => {
                 d='M25.691,23h12.618c0.535,0,0.802,0.646,0.424,1.024l-6.309,6.309 c-0.234,0.234-0.614,0.234-0.849,0l-6.309-6.309C24.889,23.646,25.156,23,25.691,23z'
               ></path>
             </svg>
-          
           </div>
-          <div className='mt-7'>
-            <p>
-              <span className='text-3xl font-semibold bg-gradient-to-r from-yellow-400 to-red-700 bg-clip-text text-transparent'>
-                Thank you..
-              </span>
-              <span className='typing-animation text-xl text-gray-300'>
-                for taking the time to explore my portfolio! I hope you found my
-                work interesting and would love to connect with you for any
-                opportunities or collaborations!!
-              </span>
-            </p>
-          </div>
+          <div className="mt-5 px-4 w-full max-w-screen-sm mx-auto md:mb-10 mb-10">
+  <p className="flex flex-col items-start ">
+   
+    <span className="block text-xl sm:text-2xl font-semibold bg-gradient-to-r from-yellow-400 to-red-700 bg-clip-text text-transparent">
+      Thank you..
+    </span>
+
+    <span className="fade-in block text-sm sm:text-base text-gray-300" ref={paragraphRef}>
+      for taking the time to explore my portfolio! I hope you found my work
+      interesting and would love to connect with you for any opportunities or
+      collaborations!!
+    </span>
+  </p>
+</div>
+
+
+
+
+
+
+
+
         </div>
       </div>
     </>

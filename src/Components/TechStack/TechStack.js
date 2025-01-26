@@ -49,7 +49,7 @@ const Skills = () => {
   }, [])
   return (
     <>
-      <div className='flex flex-col bg-gradient-to-r from-slate-950 to-slate-800 min-h-screen text-white items-center font-archivo drop-shadow-xl'>
+      <div className='flex flex-col bg-gradient-to-r from-slate-950 to-slate-800 min-h-screen text-white items-center font-archivo drop-shadow-xl' id='techstack'>
         <div className=' md:mt-20'>
           <h1 className='text-2xl font-semibold text-gray-200'>Tech Stacks</h1>
         </div>

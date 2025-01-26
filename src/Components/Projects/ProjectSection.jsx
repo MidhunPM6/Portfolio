@@ -17,8 +17,14 @@ const ProjectSection = () => {
     'An OLX-inspired classified ads platform where users can buy, sell, and trade items with a user-friendly interface and secure messaging.',
     'An ongoing project to build an interactive movie booking application with dynamic seat selection, real-time availability, and smooth checkout options.',
   ];
+
+  const projectSourceCode=["https://github.com/MidhunPM6/WorkBridge_Job_Portal-frond-end","https://github.com/MidhunPM6/WEATHER_APP","https://github.com/MidhunPM6/Netflix-Cone","https://github.com/MidhunPM6/OLX-clone","https://github.com/MidhunPM6/MovieBooking-webApp"]
+
+
+
   const [visibleCards, setVisibleCards] = useState([]); 
   const sectionRef = useRef(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -49,7 +55,7 @@ const ProjectSection = () => {
     <>
       <div
       ref={sectionRef}
-      className="flex flex-col items-center bg-gradient-to-r from-slate-950 to-slate-800 min-h-screen pt-20"
+      className="flex flex-col items-center bg-gradient-to-r from-slate-950 to-slate-800 min-h-screen pt-20" id='project'
     >
       <div className='flex-col place-items-center text-gray-200'>
         <h1 className="text-2xl font-semibold  mb-10">
@@ -62,7 +68,7 @@ const ProjectSection = () => {
         {imgfile.map((image, index) => (
           <div
             key={index}
-            className={`flex flex-col max-w-xs w-full border border-gray-400 items-center text-white p-6 rounded-xl bg-gradient-to-r from-black to-slate-900 shadow-2xl shadow-black transition-all duration-700 ${
+            className={`flex flex-col hover:scale-105 max-w-xs w-full border border-gray-400 items-center text-white p-6 rounded-xl bg-gradient-to-r from-black to-slate-900 shadow-2xl shadow-black transition-all duration-500  ${
               visibleCards.includes(index)
                 ? "opacity-100 translate-x-0" 
                 : "opacity-0 -translate-x-20" 
@@ -80,7 +86,7 @@ const ProjectSection = () => {
             <p className="text-sm text-gray-300 mt-2 mb-4 transition-opacity duration-300 hover:opacity-80">
               {descriptions[index]}
             </p>
-            <button className="py-2 px-4 text-sm hover:bg-black hover:text-white bg-white text-black rounded-md shadow-xl shadow-blue-950 transition-all duration-300 transform hover:scale-105">
+            <button className="py-2 px-4 text-sm hover:bg-black hover:text-white bg-white text-black rounded-md shadow-xl shadow-blue-950 transition-all duration-300 transform hover:scale-105" onClick={()=>window.location.href=projectSourceCode[index]}>
               Source Code
             </button>
           </div>

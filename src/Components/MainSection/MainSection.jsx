@@ -68,15 +68,15 @@ const MainSection = () => {
 
             {isMenuOpen && (
               <div className='md:hidden absolute top-0 left-0 w-full bg-gray-800 bg-opacity-90 p-4 flex flex-col items-center space-y-4'>
-                <h1 className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg'>
-                  My Projects
-                </h1>
-                <p className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg'>
-                  Reach me
-                </p>
-                <p className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg'>
-                  Tech Stacks
-                </p>
+                <NavHashLink  to='#project' className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg transition duration-300 ease-in-out' smooth>
+                My Projects
+              </NavHashLink>
+              <NavHashLink to='#techstack' className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg transition duration-300 ease-in-out' smooth>
+              Tech Stacks
+              </NavHashLink>
+              < NavHashLink to='#reachme' className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg transition duration-300 ease-in-out' smooth>
+                Reach Me
+              </NavHashLink> 
                 <button className='bg-white text-black text-sm p-2 rounded-full px-4 hover:bg-gray-200 transition duration-300 ease-in-out'>
                   Download CV
                 </button>

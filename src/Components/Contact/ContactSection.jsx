@@ -12,7 +12,7 @@ import emailjs, { send } from '@emailjs/browser'
 const ContactSection = () => {
   const linkedinLink = 'https://www.linkedin.com/in/midhunpm6060/'
   const gitLink = 'https://github.com/MidhunPM6'
-  const mailLink = ''
+  
 
   const form = useRef();
 

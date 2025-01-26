@@ -14,7 +14,7 @@ const ContactSection = () => {
   const gitLink = 'https://github.com/MidhunPM6'
   const mailLink = ''
 
-  const form = useRef()
+  const form = useRef();
 
   const sendEmail = e => {
     e.preventDefault()

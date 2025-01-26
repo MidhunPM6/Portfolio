@@ -15,7 +15,7 @@ function App() {
     <>
 
     <div>
-      <Routes>
+      <Routes>  
       <Route path="/project" element={<ProjectSection/> }/> 
       <Route path="/"  element={<MainPage/>} />
       </Routes>

@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.68a055ad.css",
+    "main.js": "/Portfolio/static/js/main.f381b88b.js",
+    "static/media/netflix.png": "/Portfolio/static/media/netflix.14f4a6b1fdda9120b219.png",
+    "static/media/olx.png": "/Portfolio/static/media/olx.adce9f05a7cb1d37c0af.png",
+    "static/media/jobportal.png": "/Portfolio/static/media/jobportal.1bca946c350620d131ba.png",
+    "static/media/ProfilePhoto.jpg": "/Portfolio/static/media/ProfilePhoto.a9d4315d3f665e74ad32.jpg",
+    "static/media/moviebooking.png": "/Portfolio/static/media/moviebooking.1fc2e0a40641a82095dd.png",
+    "static/media/weatherapp.png": "/Portfolio/static/media/weatherapp.09d6a46f7c08467950b0.png",
+    "index.html": "/Portfolio/index.html",
+    "main.68a055ad.css.map": "/Portfolio/static/css/main.68a055ad.css.map",
+    "main.f381b88b.js.map": "/Portfolio/static/js/main.f381b88b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68a055ad.css",
+    "static/js/main.f381b88b.js"
+  ]
+}

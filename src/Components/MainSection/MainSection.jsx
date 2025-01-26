@@ -1,17 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import img from '../assets/ProfilePhoto.jpg'
 import './mainSection.css'
+
 import { NavHashLink } from 'react-router-hash-link';
 
 
 const MainSection = () => {
   const resumeLink =
     'https://drive.google.com/file/d/1SxqdO4RfyiTsuTnEP2zngIxll-roOz4p/view'
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuRef = useRef(null);
+
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen((prev) => !prev);
+  };
+
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+          setIsMenuOpen(false);
+        }
+      };
+  
+      document.addEventListener('mousedown', handleClickOutside);
+  
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, []);
+  
 
   return (
     <>
@@ -48,8 +67,9 @@ const MainSection = () => {
             </div>
 
             <div className='md:hidden flex items-center'>
-              <button onClick={toggleMenu} className='text-white'>
-                <svg
+              <button onClick={toggleMenu} className='text-white' >
+               
+                  <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
                   viewBox='0 0 24 24'
@@ -63,11 +83,14 @@ const MainSection = () => {
                     d='M4 6h16M4 12h16M4 18h16'
                   />
                 </svg>
+              
+           
+                
               </button>
             </div>
 
             {isMenuOpen && (
-              <div className='md:hidden absolute top-0 left-0 w-full bg-gray-800 bg-opacity-90 p-4 flex flex-col items-center space-y-4'>
+              <div className='md:hidden absolute top-0 left-0 w-full bg-gray-800 bg-opacity-90 p-4 flex flex-col items-center space-y-4' ref={menuRef}>
                 <NavHashLink  to='#project' className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg transition duration-300 ease-in-out' smooth>
                 My Projects
               </NavHashLink>

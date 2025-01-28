@@ -18,7 +18,7 @@ const ContactSection = () => {
 
   const sendEmail = e => {
     e.preventDefault()
-
+    
     emailjs
       .sendForm('service_o5qn9m8', 'template_4appxju', form.current, {
         publicKey: 'NmgqhtopXvxLv0mf4'
@@ -40,11 +40,11 @@ const ContactSection = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsInView(true); // Trigger animation when in view
-          observer.disconnect(); // Stop observing after the animation starts
+          setIsInView(true); 
+          observer.disconnect(); 
         }
       },
-      { threshold: 0.5 } // Adjust threshold as needed
+      { threshold: 0.5 }
     );
 
     const section = paragraphRef.current;
@@ -54,7 +54,7 @@ const ContactSection = () => {
 
     return () => {
       if (section) {
-        observer.unobserve(section); // Clean up observer
+        observer.unobserve(section); 
       }
     };
   }, []);

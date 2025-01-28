@@ -65,32 +65,39 @@ const ProjectSection = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 mb-14 items-center">
-        {imgfile.map((image, index) => (
-          <div
-            key={index}
-            className={`flex flex-col hover:scale-105 max-w-xs w-full border border-gray-400 items-center text-white p-6 rounded-xl bg-gradient-to-r from-black to-slate-900 shadow-2xl shadow-black transition-all duration-500  ${
-              visibleCards.includes(index)
-                ? "opacity-100 translate-x-0" 
-                : "opacity-0 -translate-x-20" 
-            }`}
-            style={{ transitionDelay: `${index * 400}ms` }} 
-          >
-            <img
-              src={image}
-              alt={`Project Thumbnail ${index + 1}`}
-              className="p-4 rounded-md shadow-xl transition-transform duration-300 hover:scale-110"
-            />
-            <h1 className="text-2xl font-bold text-blue-400 mt-4 transition-colors duration-300 hover:text-white">
-              {projectNames[index]}
-            </h1>
-            <p className="text-sm text-gray-300 mt-2 mb-4 transition-opacity duration-300 hover:opacity-80">
-              {descriptions[index]}
-            </p>
-            <button className="py-2 px-4 text-sm hover:bg-black hover:text-white bg-white text-black rounded-md shadow-xl shadow-blue-950 transition-all duration-300 transform hover:scale-105" onClick={()=>window.location.href=projectSourceCode[index]}>
-              Source Code
-            </button>
-          </div>
-        ))}
+      {imgfile.map((image, index) => (
+  <div
+    key={index}
+    className={`flex flex-col max-w-xs w-full border border-gray-400 items-center text-white p-6 rounded-xl bg-gradient-to-r from-black to-slate-900 shadow-2xl shadow-black transform transition-all duration-300 hover:scale-105 ${
+      visibleCards.includes(index)
+        ? "opacity-100 translate-x-0"
+        : "opacity-0 -translate-x-20"
+    }`}
+    style={{
+      transitionDelay: visibleCards.includes(index) ? `${index * 400}ms` : "0ms",
+    }}
+  >
+    <img
+      src={image}
+      alt={`Project Thumbnail ${index + 1}`}
+      className="p-4 rounded-md shadow-xl transition-transform duration-300 hover:scale-110"
+    />
+    <h1 className="text-2xl font-bold text-blue-400 mt-4 transition-colors duration-300 hover:text-white">
+      {projectNames[index]}
+    </h1>
+    <p className="text-sm text-gray-300 mt-2 mb-4 transition-opacity duration-300 hover:opacity-80">
+      {descriptions[index]}
+    </p>
+    <button
+      className="py-2 px-4 text-sm hover:bg-black hover:text-white bg-white text-black rounded-md shadow-xl shadow-blue-950 transition-transform duration-300 transform hover:scale-105"
+      onClick={() => (window.location.href = projectSourceCode[index])}
+    >
+      Source Code
+    </button>
+  </div>
+))}
+
+
       </div>
     </div>
     </>

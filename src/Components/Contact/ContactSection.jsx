@@ -63,7 +63,7 @@ const ContactSection = () => {
   return (
     <>
       <div
-        className='bg-gradient-to-r from-slate-950 to-slate-800 min-h-screen md:p-12 p-6'
+        className='bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 min-h-screen md:p-12 p-6'
         id='reachme'
       >
         <ToastContainer
@@ -92,7 +92,7 @@ const ContactSection = () => {
               onSubmit={sendEmail}
               ref={form}
             >
-              <h1 className='text-2xl text-white font-semibold'>Connect me</h1>
+              <h1 className='text-2xl text-lime-400 font-semibold'>Connect me</h1>
               <input
                 type='text'
                 placeholder='Enter your name'
@@ -114,7 +114,7 @@ const ContactSection = () => {
               <button
                 type='submit'
                 value='Send'
-                className='flex mt-5 bg-white text-black py-2 px-6  rounded-lg  shadow-2xl shadow-black hover:bg-gradient-to-r from-blue-950 to-blue-900 hover:text-white'
+                className='flex mt-5 bg-lime-400 text-black py-2 px-6  rounded-lg  shadow-2xl shadow-black hover:bg-lime-600 '
               >
                 Send{' '}
                 <svg
@@ -304,7 +304,7 @@ const ContactSection = () => {
           <div className="mt-5 px-4 w-full max-w-screen-sm mx-auto md:mb-10 mb-10">
   <p className="flex flex-col items-start ">
    
-    <span className="block text-xl sm:text-2xl font-semibold bg-gradient-to-r from-yellow-400 to-red-700 bg-clip-text text-transparent">
+    <span className="block text-xl sm:text-2xl font-semibold bg-gradient-to-r from-lime-400 to-lime-200 bg-clip-text text-transparent">
       Thank you..
     </span>
 
@@ -330,3 +330,8 @@ const ContactSection = () => {
 }
 
 export default ContactSection
+
+
+
+
+

@@ -49,9 +49,9 @@ const Skills = () => {
   }, [])
   return (
     <>
-      <div className='flex flex-col bg-gradient-to-r from-slate-950 to-slate-800 min-h-screen text-white items-center font-archivo drop-shadow-xl' id='techstack'>
+      <div className='flex flex-col bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 min-h-screen text-white items-center font-archivo drop-shadow-xl' id='techstack'>
         <div className=' md:mt-20'>
-          <h1 className='text-2xl font-semibold text-gray-200'>Tech Stacks</h1>
+          <h1 className='text-2xl font-semibold text-lime-400'>Tech Stacks</h1>
         </div>
         <div
   className="flex flex-wrap md:flex-nowrap md:overflow-x-auto pl-4 pr-4 max-w-full no-scrollbar md:justify-start justify-center gap-6 md:p-16 mt-10 md:mt:0"

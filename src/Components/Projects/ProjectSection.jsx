@@ -55,9 +55,9 @@ const ProjectSection = () => {
     <>
       <div
       ref={sectionRef}
-      className="flex flex-col items-center bg-gradient-to-r from-slate-950 to-slate-800 min-h-screen pt-20" id='project'
+      className="flex flex-col items-center bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900" id='project'
     >
-      <div className='flex-col place-items-center text-gray-200'>
+      <div className='flex-col place-items-center text-lime-400'>
         <h1 className="text-2xl font-semibold  mb-10">
           Projects
         </h1>
@@ -82,10 +82,10 @@ const ProjectSection = () => {
       alt={`Project Thumbnail ${index + 1}`}
       className="p-4 rounded-md shadow-xl transition-transform duration-300 hover:scale-110"
     />
-    <h1 className="text-2xl font-bold text-blue-400 mt-4 transition-colors duration-300 hover:text-white">
+    <h1 className="text-2xl font-bold text-gray-100 mt-4 transition-colors duration-300 hover:text-gray-400">
       {projectNames[index]}
     </h1>
-    <p className="text-sm text-gray-300 mt-2 mb-4 transition-opacity duration-300 hover:opacity-80">
+    <p className="text-sm text-gray-300 mt-2 mb-4 transition-opacity duration-300 hover:text-lime-400">
       {descriptions[index]}
     </p>
     <button

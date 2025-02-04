@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import img from '../assets/ProfilePhoto.jpg'
 import './mainSection.css'
+import logo from '../assets/LogoMain.png'
 
 import { NavHashLink } from 'react-router-hash-link'
 
@@ -31,16 +32,13 @@ const MainSection = () => {
 
   return (
     <>
-      <div className='bg-gradient-to-r from-slate-950 to-slate-800 min-h-screen flex flex-col text-white font-archivo'>
+      <div className='bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 min-h-screen flex flex-col text-white font-archivo'>
         <div className='navbar-container animate-slideDown bg-opacity-0 '>
           <div className='flex flex-row justify-between items-center m-8 md:m-16'>
-            <div>
-              <span className='text-2xl font-semibold text-transparent bg-clip-text bg-white'>
-                <span className='bg-blue-600 text-transparent bg-clip-text text-4xl'>
-                  Mern Stack
-                </span>{' '}
-                Developer
-              </span>
+            <div className='flex items-center'>
+              <img src={logo} alt='' className='size-20' />
+              <h1 className='text-3xl text-gray-500'>MIDHUN</h1>
+              
             </div>
 
             <div className='hidden md:flex items-center space-x-5'>
@@ -128,9 +126,9 @@ const MainSection = () => {
           </div>
         </div>
 
-        <div className='  flex flex-col md:flex-row relative w-full overflow-hidden bg-gradient-to-r from-slate-950 to-slate-800 mt-32 justify-between px-5 md:px-16 pb-48  shadow-lg'>
+        <div className='  flex flex-col md:flex-row relative w-full overflow-hidden bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 mt-32 justify-between px-5 md:px-16 pb-48  shadow-lg'>
           <div className=' font-semibold text-lg md:text-2xl pl-[4vw]'>
-            <h1 className='text-4xl leading-relaxed mb-4 slide-in-effect text-left text-blue-500'>
+            <h1 className='text-4xl leading-relaxed mb-4 slide-in-effect text-left text-lime-400'>
               Hi, I'm a MERN Stack Developer
             </h1>
             <p className='text-xl slide-in-effect max-w-prose md:max-w-[38vw] leading-loose text-left text-gray-300'>
@@ -150,7 +148,7 @@ const MainSection = () => {
             <div className='text-center md:text-left px-4 md:px-8 w-full md:w-[60%] mt-6 md:mt-0  md:mb-0'>
               <h1 className='text-3xl md:text-4xl font-bold text-gray-300 content-animation'>
                 MIDHUN P M <br />
-                <span className='text-xl md:text-2xl text-blue-600 font-light'>
+                <span className='text-xl md:text-2xl text-lime-400 font-light'>
                   Mern Stack Developer
                 </span>
               </h1>

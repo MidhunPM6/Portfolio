@@ -34,46 +34,8 @@ const MainSection = () => {
     <>
       <div className='bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 min-h-screen flex flex-col text-white font-archivo'>
         <div className='navbar-container animate-slideDown bg-opacity-0 '>
-          <div className='flex flex-row justify-between items-center m-8 md:m-16'>
-            <div className='flex items-center'>
-              <img src={logo} alt='' className='size-20' />
-              <h1 className='text-3xl text-gray-500'>MIDHUN</h1>
-              
-            </div>
-
-            <div className='hidden md:flex items-center space-x-5'>
-              <NavHashLink
-                to='#project'
-                className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg transition duration-300 ease-in-out'
-                smooth
-              >
-                My Projects
-              </NavHashLink>
-              <NavHashLink
-                to='#techstack'
-                className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg transition duration-300 ease-in-out'
-                smooth
-              >
-                Tech Stacks
-              </NavHashLink>
-              <NavHashLink
-                to='#reachme'
-                className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg transition duration-300 ease-in-out'
-                smooth
-              >
-                Reach Me
-              </NavHashLink>
-            </div>
-            <div>
-              <button
-                className='bg-white text-black text-sm p-2 rounded-full px-4 mr-8 md:mr-16 hover:bg-gray-200 transition duration-300 ease-in-out'
-                onClick={() => (window.location.href = resumeLink)}
-              >
-                Download CV
-              </button>
-            </div>
-
-            <div className='md:hidden flex items-center'>
+          <div className='flex flex-row justify-around items-center m-8 md:m-16 '>
+          <div className='md:hidden flex '>
               <button onClick={toggleMenu} className='text-white'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -118,11 +80,48 @@ const MainSection = () => {
                 >
                   Reach Me
                 </NavHashLink>
-                <button className='bg-white text-black text-sm p-2 rounded-full px-4 hover:bg-gray-200 transition duration-300 ease-in-out'>
-                  Download CV
-                </button>
+                
               </div>
             )}
+            <div className='flex items-center  lg:pl-10'>
+              <img src={logo} alt='' className='lg:w-20 w-16' />
+              
+              
+            </div>
+
+            <div className='hidden md:flex items-center space-x-5'>
+              <NavHashLink
+                to='#project'
+                className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg transition duration-300 ease-in-out'
+                smooth
+              >
+                My Projects
+              </NavHashLink>
+              <NavHashLink
+                to='#techstack'
+                className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg transition duration-300 ease-in-out'
+                smooth
+              >
+                Tech Stacks
+              </NavHashLink>
+              <NavHashLink
+                to='#reachme'
+                className='text-gray-300 hover:text-gray-100 cursor-pointer text-lg transition duration-300 ease-in-out'
+                smooth
+              >
+                Reach Me
+              </NavHashLink>
+            </div>
+            <div>
+              <button
+                className='bg-white text-black text-xs md:text-sm p-2 rounded-full md:px-4 mr-8 md:mr-16 hover:bg-gray-200 transition duration-300 ease-in-out'
+                onClick={() => (window.location.href = resumeLink)}
+              >
+                Download CV
+              </button>
+            </div>
+
+            
           </div>
         </div>
 
@@ -138,17 +137,17 @@ const MainSection = () => {
             </p>
           </div>
 
-          <div className='relative flex flex-col mt-10 md:mt-0 md:flex-row items-center justify-between w-full md:w-[55vw] h-auto md:h-1/2 bg-slate-900 shadow-realistic rounded-lg feather-effect yellow-div'>
+          <div className='relative flex flex-col p-6 md:p-0 mt-10 md:mt-0 md:flex-row items-center justify-between w-full md:w-[55vw] h-auto md:h-1/2 bg-slate-900 shadow-realistic rounded-lg feather-effect yellow-div'>
             <img
               src={img}
               alt='Web Developer'
-              className=' w-[50%] md:w-1/3 h-auto object-cover rounded-r-[70%] shadow-2xl photo-animation '
+              className=' w-[50%] md:w-1/3 h-auto object-cover rounded-md shadow-2xl photo-animation '
             />
 
-            <div className='text-center md:text-left px-4 md:px-8 w-full md:w-[60%] mt-6 md:mt-0  md:mb-0'>
-              <h1 className='text-3xl md:text-4xl font-bold text-gray-300 content-animation'>
+            <div className='text-center md:text-left px-4 md:px-8 w-full md:w-[60%] mt-6 md:mt-0  md:mb-0 flex flex-col justify-center'>
+              <h1 className='text-3xl md:text-4xl font-bold text-gray-300 content-animation '>
                 MIDHUN P M <br />
-                <span className='text-xl md:text-2xl text-lime-400 font-light'>
+                <span className='text-lg md:text-xl text-lime-400 font-light'>
                   Mern Stack Developer
                 </span>
               </h1>

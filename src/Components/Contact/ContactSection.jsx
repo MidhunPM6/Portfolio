@@ -138,7 +138,7 @@ const ContactSection = () => {
         </div>
 
         <div className='flex flex-col items-center justify-center text-white text-xl  md:mt-20 '>
-          <div className='flex'>
+          <div className='flex '>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               x='0px'
@@ -146,7 +146,7 @@ const ContactSection = () => {
               width='100'
               height='100'
               viewBox='0 0 64 64'
-              className='size-12 cursor-pointer hover:scale-125 '
+              className='size-12 cursor-pointer hover:scale-125 transition-all duration-300'
               onClick={() => (window.location.href = gitLink)}
             >
               <circle cx='32' cy='32' r='23' fill='#9c34c2'></circle>
@@ -182,7 +182,7 @@ const ContactSection = () => {
               width='100'
               height='100'
               viewBox='0 0 64 64'
-              className='size-12 ml-2 cursor-pointer hover:scale-125'
+              className='size-12 ml-2 cursor-pointer hover:scale-125 transition-all duration-300'
               onClick={() => (window.location.href = linkedinLink)}
             >
               <linearGradient
@@ -264,7 +264,7 @@ const ContactSection = () => {
               width='100'
               height='100'
               viewBox='0 0 64 64'
-              className='size-12 ml-2 cursor-pointer hover:scale-125 '
+              className='size-12 ml-2 cursor-pointer hover:scale-125 transition-all duration-300'
               onClick={() =>
                 (window.location.href = 'mailto:midhunpm6060@gmail.com')
               }

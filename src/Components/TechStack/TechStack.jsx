@@ -49,75 +49,91 @@ const Skills = () => {
   }, [])
   return (
     <>
-      <div className='flex flex-col bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 min-h-screen text-white items-center font-archivo drop-shadow-xl' id='techstack'>
+      <div className='flex flex-col bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 min-h-screen text-white items-center font-archivo drop-shadow-xl  ' id='techstack'>
         <div className=' md:mt-20'>
           <h1 className='text-2xl font-semibold text-lime-400'>Tech Stacks</h1>
         </div>
-        <div
-  className="flex flex-wrap md:flex-nowrap md:overflow-x-auto pl-4 pr-4 max-w-full no-scrollbar md:justify-start justify-center gap-6 md:p-16 mt-10 md:mt:0"
-  ref={scrollRef}
->
-  <img
-    src={javascript}
-    alt=""
-    className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
-  />
-  <img
-    src={nodejs}
-    alt=""
-    className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
-  />
-  <img
-    src={expressjs}
-    alt=""
-    className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
-  />
-  <img
-    src={mongodb}
-    alt=""
-    className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
-  />
-  <img
-    src={firebase}
-    alt=""
-    className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
-  />
-  <img
-    src={reactjs}
-    alt=""
-    className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
-  />
-  <img
-    src={html}
-    alt=""
-    className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
-  />
-  <img
-    src={css}
-    alt=""
-    className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
-  />
-  <img
-    src={tailwind}
-    alt=""
-    className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
-  />
-  <img
-    src={bootstrap}
-    alt=""
-    className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
-  />
-  <img
-    src={git}
-    alt=""
-    className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
-  />
-  <img
-    src={postman}
-    alt=""
-    className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
-  />
+        <div className="relative">
+        <div className="relative">
+        <div className="relative overflow-hidden">
+  <div
+    className="flex flex-wrap md:flex-nowrap md:overflow-x-auto pl-4 pr-4 max-w-[90vw] no-scrollbar md:justify-start justify-center gap-6 md:p-16 mt-10 md:mt-0"
+    ref={scrollRef}
+  >
+    <img
+      src={javascript}
+      alt=""
+      className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
+    />
+    <img
+      src={nodejs}
+      alt=""
+      className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
+    />
+    <img
+      src={expressjs}
+      alt=""
+      className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
+    />
+    <img
+      src={mongodb}
+      alt=""
+      className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
+    />
+    <img
+      src={firebase}
+      alt=""
+      className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
+    />
+    <img
+      src={reactjs}
+      alt=""
+      className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
+    />
+    <img
+      src={html}
+      alt=""
+      className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
+    />
+    <img
+      src={css}
+      alt=""
+      className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
+    />
+    <img
+      src={tailwind}
+      alt=""
+      className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
+    />
+    <img
+      src={bootstrap}
+      alt=""
+      className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
+    />
+    <img
+      src={git}
+      alt=""
+      className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
+    />
+    <img
+      src={postman}
+      alt=""
+      className="rounded-2xl shadow-2xl shadow-blue-950 w-28 md:w-44 hover:scale-105 transition-transform duration-200"
+    />
+  </div>
+
+  {/* Left Edge Fade */}
+  <div className="pointer-events-none absolute top-0 left-0 h-full w-4 bg-gradient-to-r from-gray-900 via-transparent to-transparent opacity-0 md:opacity-70"></div>
+  
+  {/* Right Edge Fade */}
+  <div className="pointer-events-none absolute top-0 right-0 h-full w-4 bg-gradient-to-l from-gray-900 via-transparent to-transparent opacity-0 md:opacity-70"></div>
 </div>
+
+</div>
+
+</div>
+
+
 
         <div className='max-w-[90vw] text-gray-400 border border-blue-700 p-8 rounded-lg shadow-2xl shadow-blue-900  hover:text-gray-300 hover:shadow-blue-800 mt-16 hover:scale-[101%] '>
           <p className='text-xl leading-relaxed '>

@@ -135,7 +135,7 @@ const Skills = () => {
 
 
 
-        <div className='max-w-[90vw] text-gray-400 border border-blue-700 p-8 rounded-lg shadow-2xl shadow-blue-900  hover:text-gray-300 hover:shadow-blue-800 mt-16 hover:scale-[101%] '>
+        <div className='max-w-[90vw] text-gray-400 border border-blue-700 p-8 rounded-lg  shadow-[0px_0px_24px_4px_rgba(19,93,241,1)] hover:text-gray-300 hover:shadow-blue-800 mt-16 hover:scale-[101%] '>
           <p className='text-xl leading-relaxed '>
             {' '}
             My frontend skills include creating modern interfaces with React.js,

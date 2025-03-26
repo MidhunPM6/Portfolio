@@ -34,7 +34,7 @@ const MainSection = () => {
     <>
       <div className='bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 min-h-screen flex flex-col text-white font-archivo'>
         <div className='navbar-container animate-slideDown bg-opacity-0 '>
-          <div className='flex flex-row justify-around items-center m-8 md:m-16 '>
+          <div className='flex flex-row justify-center gap-24 items-center m-8 md:m-16 '>
           <div className='md:hidden flex '>
               <button onClick={toggleMenu} className='text-white'>
                 <svg
@@ -83,11 +83,7 @@ const MainSection = () => {
                 
               </div>
             )}
-            <div className='flex items-center  lg:pl-10'>
-              <img src={logo} alt='' className='lg:w-20 w-16' />
-              
-              
-            </div>
+           
 
             <div className='hidden md:flex items-center space-x-5'>
               <NavHashLink

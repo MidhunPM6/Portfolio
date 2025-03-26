@@ -7,18 +7,32 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import Lottie from 'lottie-react'
 
-import emailjs, { send } from '@emailjs/browser'
+import emailjs from '@emailjs/browser'
 
 const ContactSection = () => {
   const linkedinLink = 'https://www.linkedin.com/in/midhunpm6060/'
   const gitLink = 'https://github.com/MidhunPM6'
-  
-
   const form = useRef();
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+
+  const validateEmail = (email) => {
+   
+    const regex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    return regex.test(email);
+  };
 
   const sendEmail = e => {
     e.preventDefault()
-    
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setError("Invalid email format");
+      return;
+    }
     emailjs
       .sendForm('service_o5qn9m8', 'template_4appxju', form.current, {
         publicKey: 'NmgqhtopXvxLv0mf4'
@@ -78,17 +92,17 @@ const ContactSection = () => {
           pauseOnHover
           theme='light'
         />
-        <div className='flex flex-col md:flex-row  items-center  rounded-md  '>
+        <div className='flex flex-col md:flex-row h-full items-center  rounded-md lg:gap-0 gap-14'>
           <div className='flex flex-col items-center w-full  md:w-[50%] md:h-[60vh] h-[40vh]  rounded-md md:mb-0 mb-10 '>
-            <div className='md:w-[64%] w-full  '>
+            <div className='md:w-2/3 w-full h-full  '>
               <Lottie loop={true} animationData={gif}></Lottie>
             </div>
           </div>
 
-          <div className='flex flex-col  p-10 w-full  md:mb-0  md:w-[36%] h-[55vh] bg-black rounded-xl shadow-2xl shadow-blue-950 mb-10 '>
+          <div className='flex flex-col  p-10 w-full  md:mb-0  md:w-1/2 bg-black rounded-sm shadow-[0px_0px_39px_17px_rgba(19,93,241,0.2)] mb-10 '>
             <form
               action=''
-              className='flex flex-col items-center'
+              className='flex flex-col items-center '
               onSubmit={sendEmail}
               ref={form}
             >
@@ -97,24 +111,24 @@ const ContactSection = () => {
                 type='text'
                 placeholder='Enter your name'
                 name='from_name'
-                className='bg-gray-200 p-2  rounded-md text-gray-700 w-full md:w-[80%] lg:w-[50%] mt-10   outline-none focus:border  border-blue-700  shadow-2xl shadow-blue-800'
+                className='bg-gray-200 p-2  rounded-sm text-gray-700 w-full md:w-[80%] lg:w-2/3 mt-10   outline-none focus:border  border-blue-700  shadow-2xl shadow-blue-800'
               />
               <input
                 type='email'
                 name='from_email'
                 placeholder='Enter your email'
-                className='bg-gray-200 p-2 rounded-md text-gray-700 w-full md:w-[80%] lg:w-[50%] mt-6   outline-none focus:border  border-blue-700  shadow-2xl shadow-blue-800'
+                className='bg-gray-200 p-2 rounded-sm text-gray-700 w-full md:w-[80%] lg:w-2/3 mt-6   outline-none focus:border  border-blue-700  shadow-2xl shadow-blue-800'
               />
               <textarea
                 name='message'
                 id=''
                 placeholder='Description'
-                className='bg-gray-200 p-2 rounded-md text-gray-700 w-full md:w-[80%] lg:w-[50%] mt-6   outline-none focus:border  border-blue-700  shadow-2xl shadow-blue-800 max-h-28'
+                className='bg-gray-200 p-2 rounded-sm text-gray-700 w-full md:w-[80%] lg:w-2/3 mt-6   outline-none focus:border  border-blue-700  shadow-2xl shadow-blue-800 max-h-28'
               ></textarea>
               <button
                 type='submit'
                 value='Send'
-                className='flex mt-5 bg-lime-400 text-black py-2 px-6  rounded-lg  shadow-2xl shadow-black hover:bg-lime-600 '
+                className='flex mt-5 bg-lime-400 text-black py-2 px-6  rounded-sm  shadow-2xl shadow-black hover:bg-lime-600 '
               >
                 Send{' '}
                 <svg

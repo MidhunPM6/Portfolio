@@ -55,9 +55,9 @@ const ProjectSection = () => {
     <>
       <div
       ref={sectionRef}
-      className="flex flex-col items-center bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900" id='project'
+      className="flex flex-col items-center min-h-screen bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900" id='project'
     >
-      <div className='flex-col place-items-center '>
+      <div className='flex-col place-items-center h-full '>
         <h1 className="text-2xl font-semibold  mb-10 md:pt-0 pt-8 text-lime-400">
           Projects
         </h1>
@@ -68,7 +68,7 @@ const ProjectSection = () => {
   {imgfile.map((image, index) => (
     <div
       key={index}
-      className={`flex flex-col mt-10 md:mt-0 max-w-[80vw] md:max-w-[19vw] w-full max-h-[55vh] border border-gray-500 items-center text-white p-4 rounded-lg bg-gradient-to-r from-gray-950 to-slate-900 shadow-lg transition-transform duration-300  hover:scale-105 hover:z-10 ${
+      className={`flex flex-col mt-10 md:mt-0 max-w-[80vw] gap-2 md:max-w-[19vw] w-full  border border-gray-500 items-center text-white p-4 rounded-lg bg-gradient-to-r from-gray-950 to-slate-900 shadow-lg transition-transform duration-300  hover:scale-105 hover:z-10 ${
         visibleCards.includes(index)
           ? "opacity-100 translate-x-0"
           : "opacity-0 -translate-x-20"
@@ -87,11 +87,11 @@ const ProjectSection = () => {
       <h1 className="text-lg font-semibold text-gray-100 mt-3 transition-colors duration-300 hover:text-gray-400">
         {projectNames[index]}
       </h1>
-      <p className="text-md text-gray-300 mt-1 mb-3 transition-opacity duration-300 hover:text-lime-400">
+      <p className="text-md text-gray-300 mt-1 mb-3 hover:text-lime-400">
         {descriptions[index]}
       </p>
       <button
-        className="py-1 px-3 text-sm hover:bg-black hover:text-white bg-white text-black rounded-md shadow-md transition-transform duration-300 transform hover:scale-105"
+        className="py-1 px-3 text-sm hover:bg-gray-200 mb-2 bg-gray-50 text-black rounded-sm shadow-md transition-transform duration-300 transform hover:scale-105"
         onClick={() => (window.location.href = projectSourceCode[index])}
       >
         Source Code
